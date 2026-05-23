@@ -29,7 +29,7 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile = file("../nova-browser.keystore")
+            storeFile = file("../tutu-browser.keystore")
             storePassword = "tutu12345"
             keyAlias = "tutu"
             keyPassword = "tutu12345"
