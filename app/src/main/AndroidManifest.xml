@@ -56,6 +56,18 @@
             android:exported="false"
             android:foregroundServiceType="dataSync" />
         
+        <!-- Remove default WorkManagerInitializer because NovaApplication provides on-demand config -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
+        
         <!-- FileProvider for secure file access -->
         <provider
             android:name="androidx.core.content.FileProvider"
